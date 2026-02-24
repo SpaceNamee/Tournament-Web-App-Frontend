@@ -29,7 +29,7 @@ const Tournaments = () => {
       let joinedTournaments = [];
       try {
         const joinedRes = await axios.get(
-          `https://tournament-web-app-backend-1.onrender.com/tournaments/filter/joined`,
+          "https://tournament-web-app-backend-1.onrender.com/tournaments/filter/joined",
           { headers: config.headers, params: { user_id: userId } }
         );
         joinedTournaments = joinedRes.data.data || joinedRes.data || [];
