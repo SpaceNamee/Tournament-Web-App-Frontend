@@ -59,12 +59,12 @@ const CreateEditTeamDetails = () => {
 
       if (team) {
         // editar
-        await axios.patch(`http://127.0.0.1:8000/teams/alter/${team.id}`, payload);
+        await axios.patch(`https://tournament-web-app-backend-1.onrender.com/teams/alter/${team.id}`, payload);
         alert("Team updated successfully!");
       } else {
         // criar
         const userId = localStorage.getItem("user_id");
-        await axios.post("http://127.0.0.1:8000/teams/create", {
+        await axios.post("https://tournament-web-app-backend-1.onrender.com/teams/create", {
           ...payload,
           created_by: parseInt(userId),
           visibility: "visible",

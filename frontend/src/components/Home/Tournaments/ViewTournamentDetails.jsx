@@ -26,7 +26,7 @@ const ViewTournamentDetails = () => {
 
         // ✅ Buscar detalhes corretos
         const { data: tournamentRes } = await axios.get(
-          `http://127.0.0.1:8000/tournaments/${tournamentId}`,
+          `https://tournament-web-app-backend-1.onrender.com/tournaments/${tournamentId}`,
           config
         );
 
@@ -35,7 +35,7 @@ const ViewTournamentDetails = () => {
         // Buscar organizer
         if (tournamentRes.created_by) {
           const { data: organizerRes } = await axios.get(
-            `http://127.0.0.1:8000/users/${tournamentRes.created_by}`,
+            `https://tournament-web-app-backend-1.onrender.com/users/${tournamentRes.created_by}`,
             config
           );
           setOrganizer(organizerRes);

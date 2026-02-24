@@ -24,7 +24,7 @@ const EditProfile = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get(`http://127.0.0.1:8000/users/${user_id}`, config);
+        const res = await axios.get(`https://tournament-web-app-backend-1.onrender.com/users/${user_id}`, config);
         const user = res.data;
         setFormData({
           name: user.name || "",
@@ -67,7 +67,7 @@ const EditProfile = () => {
     };
 
     try {
-      await axios.put(`http://127.0.0.1:8000/users/${user_id}`, payload, config);
+      await axios.put(`https://tournament-web-app-backend-1.onrender.com/users/${user_id}`, payload, config);
       alert("Profile updated successfully!");
       navigate("/profile");
     } catch (err) {

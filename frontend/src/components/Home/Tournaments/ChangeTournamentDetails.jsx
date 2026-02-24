@@ -33,7 +33,7 @@ const ChangeTournamentDetails = () => {
     if (!tournamentId) return;
 
     axios
-      .get(`http://127.0.0.1:8000/tournaments/${tournamentId}`)
+      .get(`https://tournament-web-app-backend-1.onrender.com/tournaments/${tournamentId}`)
       .then((res) => {
         setTournament({
           ...res.data,
@@ -83,7 +83,7 @@ const ChangeTournamentDetails = () => {
     }
 
     try {
-      await axios.put(`http://127.0.0.1:8000/tournaments/alter/${tournamentId}`, payload);
+      await axios.put(`https://tournament-web-app-backend-1.onrender.com/tournaments/alter/${tournamentId}`, payload);
       alert("Tournament updated successfully!");
       navigate(-1);
     } catch {

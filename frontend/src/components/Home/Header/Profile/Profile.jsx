@@ -24,12 +24,12 @@ const Profile = () => {
     const fetchData = async () => {
       try {
         // Fetch user
-        const userRes = await axios.get(`http://127.0.0.1:8000/users/${user_id}`, config);
+        const userRes = await axios.get(`https://tournament-web-app-backend-1.onrender.com/users/${user_id}`, config);
         setUserData(userRes.data);
 
         // Fetch teams
         const teamsRes = await axios.get(
-          `http://127.0.0.1:8000/teams/joined_participants/${user_id}`,
+          `https://tournament-web-app-backend-1.onrender.com/teams/joined_participants/${user_id}`,
           config
         );
         const uniqueTeams = Array.isArray(teamsRes.data)
@@ -39,7 +39,7 @@ const Profile = () => {
 
         // Fetch tournaments
         const tournamentsRes = await axios.get(
-          `http://127.0.0.1:8000/tournaments/filter/joined`,
+          `https://tournament-web-app-backend-1.onrender.com/tournaments/filter/joined`,
           { headers: { Authorization: `Bearer ${access_token}` }, params: { user_id } }
         );
         console.log("Tournaments response:", tournamentsRes.data); // debug

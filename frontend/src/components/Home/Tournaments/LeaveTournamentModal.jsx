@@ -47,7 +47,7 @@ const LeaveTournamentModal = ({
           ? { tournament_id: tournament.id, user_id: userId, team_id: selectedTeamId }
           : { tournament_id: tournament.id, user_id: userId };
 
-      await axios.post("http://127.0.0.1:8000/tournaments/leave", payload, config);
+      await axios.post("https://tournament-web-app-backend-1.onrender.com/tournaments/leave", payload, config);
 
       onLeaveSuccess?.(tournament.id);
       handleClose();

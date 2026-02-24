@@ -17,7 +17,7 @@ const JoinTournamentModal = ({ isOpen, onClose, tournament, onJoin }) => {
         setLoadingTeams(true);
 
         const res = await axios.get(
-          `http://127.0.0.1:8000/teams/joined_participants/${userId}`,
+          `https://tournament-web-app-backend-1.onrender.com/teams/joined_participants/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("access_token")}`
@@ -40,7 +40,7 @@ const JoinTournamentModal = ({ isOpen, onClose, tournament, onJoin }) => {
 
 
   /*
-  axios.get(`http://127.0.0.1:8000/teams/joined_participants/${userId}`)
+  axios.get(`https://tournament-web-app-backend-1.onrender.com/teams/joined_participants/${userId}`)
     .then(res => setTeams(res.data))
     .catch(err => console.error("Failed to fetch teams:", err))
     .finally(() => setLoadingTeams(false));*/

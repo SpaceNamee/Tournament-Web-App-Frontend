@@ -60,7 +60,7 @@ const handleCreateTeam = async () => {
   };
 
   try {
-    await axios.post("http://127.0.0.1:8000/teams/create", teamData);
+    await axios.post("https://tournament-web-app-backend-1.onrender.com/teams/create", teamData);
     alert("Team successfully created!");
     navigate("/teams"); 
   } catch (err) {

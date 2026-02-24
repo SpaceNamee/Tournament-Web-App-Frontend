@@ -29,7 +29,7 @@ const Teams = () => {
       };
 
       const joinedRes = await axios.get(
-        `http://127.0.0.1:8000/teams/joined_participants/${userId}`,
+        `https://tournament-web-app-backend-1.onrender.com/teams/joined_participants/${userId}`,
         authConfig
       );
 
@@ -38,7 +38,7 @@ const Teams = () => {
       console.log("ACTIVE JOINED TEAMS:", joinedTeams);
 
       const allRes = await axios.get(
-        "http://127.0.0.1:8000/teams/all_active",
+        "https://tournament-web-app-backend-1.onrender.com/teams/all_active",
         { ...authConfig, params: { page: 1, perPage: 50 } }
       );
 
@@ -67,7 +67,7 @@ const Teams = () => {
   const handleJoin = async (teamId) => {
     try {
       const res = await axios.post(
-        "http://127.0.0.1:8000/teams/join",
+        "https://tournament-web-app-backend-1.onrender.com/teams/join",
         { team_id: teamId, user_id: parseInt(user_id, 10), password: null },
         { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` } }
       );
@@ -86,7 +86,7 @@ const Teams = () => {
     if (!teamId) return;
     try {
       await axios.post(
-        "http://127.0.0.1:8000/teams/leave",
+        "https://tournament-web-app-backend-1.onrender.com/teams/leave",
         { team_id: teamId, user_id: parseInt(user_id, 10) },
         { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` } }
       );
@@ -106,7 +106,7 @@ const Teams = () => {
   const handleDeleteTeam = async (teamId) => {
     if (!window.confirm("Delete this team?")) return;
     try {
-      await axios.delete(`http://127.0.0.1:8000/teams/delete/${teamId}`, {
+      await axios.delete(`https://tournament-web-app-backend-1.onrender.com/teams/delete/${teamId}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` },
       });
       setTeams((prev) =>

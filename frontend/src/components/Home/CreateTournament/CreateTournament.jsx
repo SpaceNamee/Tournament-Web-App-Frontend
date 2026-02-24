@@ -121,7 +121,7 @@ const handleCreateTournament = async () => {
 
     /* ---------- API CALL ---------- */
     const response = await axios.post(
-      "http://127.0.0.1:8000/tournaments/create",
+      "https://tournament-web-app-backend-1.onrender.com/tournaments/create",
       payload,
       { headers: { "Content-Type": "application/json" } }
     );

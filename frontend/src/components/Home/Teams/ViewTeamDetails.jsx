@@ -19,7 +19,7 @@ const ViewTeamDetails = () => {
         setLoading(true);
 
         // Se não temos todos os dados da equipa, buscar do backend
-        const res = await axios.get(`http://127.0.0.1:8000/teams/${teamState?.id || team.id}`, {
+        const res = await axios.get(`https://tournament-web-app-backend-1.onrender.com/teams/${teamState?.id || team.id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`,
           },
@@ -31,7 +31,7 @@ const ViewTeamDetails = () => {
         // Buscar info do criador se não formos membros
         if (!teamData.joined) {
           const creatorRes = await axios.get(
-            `http://127.0.0.1:8000/users/${teamData.created_by}`,
+            `https://tournament-web-app-backend-1.onrender.com/users/${teamData.created_by}`,
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("access_token")}`,
@@ -65,7 +65,7 @@ const ViewTeamDetails = () => {
       // Se temos o estado da rota completo, já podemos buscar o criador
       if (!teamState.joined) {
         axios
-          .get(`http://127.0.0.1:8000/users/${teamState.created_by}`, {
+          .get(`https://tournament-web-app-backend-1.onrender.com/users/${teamState.created_by}`, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("access_token")}`,
             },
@@ -87,7 +87,7 @@ const ViewTeamDetails = () => {
     try {
       const userId = localStorage.getItem("user_id");
       await axios.post(
-        "http://127.0.0.1:8000/teams/join",
+        "https://tournament-web-app-backend-1.onrender.com/teams/join",
         { team_id: team.id, user_id: parseInt(userId), password: "" },
         { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` } }
       );

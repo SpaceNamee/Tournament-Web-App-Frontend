@@ -29,7 +29,7 @@ const Tournaments = () => {
       let joinedTournaments = [];
       try {
         const joinedRes = await axios.get(
-          `http://127.0.0.1:8000/tournaments/filter/joined`,
+          `https://tournament-web-app-backend-1.onrender.com/tournaments/filter/joined`,
           { headers: config.headers, params: { user_id: userId } }
         );
         joinedTournaments = joinedRes.data.data || joinedRes.data || [];
@@ -37,7 +37,7 @@ const Tournaments = () => {
         if (err.response?.status !== 404) console.error(err);
       }
 
-      const allRes = await axios.get("http://127.0.0.1:8000/tournaments/all_active", config);
+      const allRes = await axios.get("https://tournament-web-app-backend-1.onrender.com/tournaments/all_active", config);
       const allTournaments = allRes.data.data || [];
 
       const tournamentsWithJoined = allTournaments.map((t) => ({
@@ -115,7 +115,7 @@ const Tournaments = () => {
 
       console.log("JOIN PAYLOAD:", payload);
 
-      await axios.post("http://127.0.0.1:8000/tournaments/join", payload, config);
+      await axios.post("https://tournament-web-app-backend-1.onrender.com/tournaments/join", payload, config);
 
       setTournaments(prev =>
         prev.map(t =>
@@ -136,7 +136,7 @@ const Tournaments = () => {
       const config = {
         headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` },
       };
-      await axios.post(`http://127.0.0.1:8000/tournaments/${id}/leave`, {}, config);
+      await axios.post(`https://tournament-web-app-backend-1.onrender.com/tournaments/${id}/leave`, {}, config);
 
       setTournaments((prev) =>
         prev.map((t) => (t.id === id ? { ...t, joined: false } : t))

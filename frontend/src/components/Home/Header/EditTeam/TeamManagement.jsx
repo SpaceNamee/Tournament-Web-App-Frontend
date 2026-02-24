@@ -14,7 +14,7 @@ const TeamManagement = () => {
       try {
         // 1️⃣ Buscar teams do user
         const res = await axios.get(
-          `http://127.0.0.1:8000/teams/joined_participants/${userId}`
+          `https://tournament-web-app-backend-1.onrender.com/teams/joined_participants/${userId}`
         );
         const teams = res.data;
 
@@ -24,7 +24,7 @@ const TeamManagement = () => {
         const teamsWithMembers = await Promise.all(
           teams.map(async (team) => {
             const teamRes = await axios.get(
-              `http://127.0.0.1:8000/teams/${team.id}`
+              `https://tournament-web-app-backend-1.onrender.com/teams/${team.id}`
             );
 
             console.log(`Team ${team.id} data:`, teamRes.data);
