@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Tournament-Web-App-Frontend/static/css/main.51ddba0f.css",
-    "main.js": "/Tournament-Web-App-Frontend/static/js/main.202a2fe3.js",
+    "main.js": "/Tournament-Web-App-Frontend/static/js/main.88358b1e.js",
     "static/media/background.png": "/Tournament-Web-App-Frontend/static/media/background.b9c58bb0f8fd37771dd3.png",
     "static/media/google-icon.png": "/Tournament-Web-App-Frontend/static/media/google-icon.0616302353babd48b2cc.png",
     "static/media/1-1.png": "/Tournament-Web-App-Frontend/static/media/1-1.4fce541c17a956cc2f50.png",
@@ -9,10 +9,10 @@
     "static/media/Footer-logo.png": "/Tournament-Web-App-Frontend/static/media/Footer-logo.dc53cc6a12c8125ed35b.png",
     "index.html": "/Tournament-Web-App-Frontend/index.html",
     "main.51ddba0f.css.map": "/Tournament-Web-App-Frontend/static/css/main.51ddba0f.css.map",
-    "main.202a2fe3.js.map": "/Tournament-Web-App-Frontend/static/js/main.202a2fe3.js.map"
+    "main.88358b1e.js.map": "/Tournament-Web-App-Frontend/static/js/main.88358b1e.js.map"
   },
   "entrypoints": [
     "static/css/main.51ddba0f.css",
-    "static/js/main.202a2fe3.js"
+    "static/js/main.88358b1e.js"
   ]
 }
