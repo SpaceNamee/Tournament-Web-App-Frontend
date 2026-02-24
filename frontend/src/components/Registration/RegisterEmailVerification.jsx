@@ -38,7 +38,7 @@ const handleNextClick = async () => {
   }
 
   try {
-    const res = await axios.get(`http://127.0.0.1:8000/users/email/${email}`);
+    const res = await axios.get(`https://tournament-web-app-backend-1.onrender.com/users/email/${email}`);
     const user = res.data;
     setIsEmailVerified(true);
     localStorage.setItem("email_verified", "true");

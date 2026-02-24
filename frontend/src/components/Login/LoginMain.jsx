@@ -35,7 +35,7 @@ const LoginMain = ({ setIsLoggedIn, setIsEmailVerified }) => {
       params.append("password", password);
 
       const res = await axios.post(
-        "http://127.0.0.1:8000/auth/token",
+        "https://tournament-web-app-backend-1.onrender.com/auth/token",
         params,
         { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       );
@@ -46,7 +46,7 @@ const LoginMain = ({ setIsLoggedIn, setIsEmailVerified }) => {
       localStorage.setItem("user_id", user_id);
 
       const userRes = await axios.get(
-        `http://127.0.0.1:8000/users/${user_id}`,
+        `https://tournament-web-app-backend-1.onrender.com/users/${user_id}`,
         {
           headers: { Authorization: `Bearer ${access_token}` },
         }
