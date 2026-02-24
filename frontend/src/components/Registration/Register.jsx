@@ -48,7 +48,7 @@ const Register = ({ setIsLoggedIn, setIsEmailVerified }) => {
     if (!termsAccepted) return alert("Accept terms");
     setLoading(true);
     try {
-      const res = await axios.post("http://127.0.0.1:8000/auth/register", formData);
+      const res = await axios.post("https://tournament-web-app-backend-1.onrender.com/auth/register", formData);
       localStorage.setItem("user_email", res.data.email);
       navigate("/verify-email", { state: { email: formData.email } });
     } catch (err) {
